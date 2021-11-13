@@ -10,15 +10,21 @@
 <body>
 	<h1 th:text="${titulo}"></h1>
 	
-	<table>
+	<table class="table">
 		<thead>
 			<tr>
 				<th>Nombre</th>
+				<th>Puesto</th>
+				<th>VCard</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="empleado: ${empleados}">
 				<td th:text="${empleado.nombre_empleado}"></td>
+				<td th:text="${empleado.puesto_empleado}"></td>
+				<td>
+					<a th:href="@{/vcard/ver/} + ${empleado.codigo_empleado}" >Ver</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
